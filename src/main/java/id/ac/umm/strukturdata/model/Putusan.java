@@ -43,4 +43,20 @@ public class Putusan {
         this.keadaanMeringankan = keadaanMeringankan;
         this.halSumber = halSumber;
     }
+    public String getIdKasus() { return idKasus; }
+    public String getNoPerkara() { return noPerkara; }
+    public String getPengadilan() { return pengadilan; }
+    public LocalDate getTanggalPutusan() { return tanggalPutusan; }
+    public String getIdTerdakwa() { return idTerdakwa; }
+    public String getJenisNarkotika() { return jenisNarkotika; }
+    public double getBeratBarangBuktiGram() { return beratBarangBuktiGram; }
+    public String getPasalDakwaan() { return pasalDakwaan; }
+    public String getPasalTerbukti() { return pasalTerbukti; }
+    public int getTuntutanBulan() { return tuntutanBulan; }
+    public int getVonisBulan() { return vonisBulan; }
+    public long getDendaRupiah() { return dendaRupiah; }
+    public String getBarangBukti() { return barangBukti; }
+    public String getKeadaanMemberatkan() { return keadaanMemberatkan; }
+    public String getKeadaanMeringankan() { return keadaanMeringankan; }
+    public String getHalSumber() { return halSumber; }
 }
