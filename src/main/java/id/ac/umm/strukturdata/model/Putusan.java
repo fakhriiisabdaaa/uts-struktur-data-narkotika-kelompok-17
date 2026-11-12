@@ -59,4 +59,13 @@ public class Putusan {
     public String getKeadaanMemberatkan() { return keadaanMemberatkan; }
     public String getKeadaanMeringankan() { return keadaanMeringankan; }
     public String getHalSumber() { return halSumber; }
+
+    @Override
+    public String toString() {
+        return idKasus + " | " + noPerkara + " | " + pengadilan
+                + " | " + tanggalPutusan + " | " + jenisNarkotika
+                + " | " + beratBarangBuktiGram + " gram"
+                + " | vonis " + vonisBulan + " bulan"
+                + " | denda Rp" + dendaRupiah;
+    }
 }
