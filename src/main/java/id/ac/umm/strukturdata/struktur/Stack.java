@@ -2,7 +2,7 @@ package id.ac.umm.strukturdata.struktur;
 
 public class Stack<T> implements StrukturData<T> {
 
-    private static final int KAPASITAS_AWAL = 52;
+    private static final int KAPASITAS_AWAL = 26;
     private Object[] data;
     private int size;
     private int langkahTerakhir;
