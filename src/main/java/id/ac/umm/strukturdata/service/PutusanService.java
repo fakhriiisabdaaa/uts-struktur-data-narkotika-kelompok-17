@@ -16,7 +16,7 @@ public class PutusanService {
         if (putusan == null) {
             throw new IllegalArgumentException("Putusan tidak boleh kosong");
         }
-        if (cariByIdKasus(putusan.getIdKasus()) != -1) {
+        if (cariIdKasus(putusan.getIdKasus()) != -1) {
             throw new IllegalArgumentException("ID KASUS sudah digunakan: " + putusan.getIdKasus());
         }
         arsip.add(putusan);
@@ -26,7 +26,7 @@ public class PutusanService {
         if (putusan == null) {
             throw new IllegalArgumentException("Putusan tidak boleh kosong");
         }
-        if (cariByIdKasus(putusan.getIdKasus()) != -1) {
+        if (cariIdKasus(putusan.getIdKasus()) != -1) {
             throw new IllegalArgumentException("ID KASUS sudah digunakan: " + putusan.getIdKasus());
         }
         arsip.insert(posisi, putusan);
@@ -51,7 +51,7 @@ public class PutusanService {
         return sb.toString();
     }
 
-    public int cariByIdKasus(String idKasus) {
+    public int cariIdKasus(String idKasus) {
         langkahTerakhir = 0;
         for (int i = 0; i < arsip.size(); i++) {
             langkahTerakhir++;
@@ -62,11 +62,22 @@ public class PutusanService {
         return -1;
     }
 
-    public int cariByNoPerkara(String noPerkara) {
+    public int cariNoPerkara(String noPerkara) {
         langkahTerakhir = 0;
         for (int i = 0; i < arsip.size(); i++) {
             langkahTerakhir++;
             if (sama(arsip.get(i).getNoPerkara(), noPerkara)) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public int cariIdTerdakwa(String idTerdakwa) {
+        langkahTerakhir = 0;
+        for (int i = 0; i<arsip.size(); i++){
+            langkahTerakhir++;
+            if (sama(arsip.get(i).getIdTerdakwa(), idTerdakwa)){
                 return i;
             }
         }
