@@ -10,7 +10,7 @@ import java.time.LocalDate;
 
 public class CsvImporter {
 
-    public ArrayDinamis<Putusan> importCsv(String path)
+    public ArrayDinamis<Putusan> importCsv(String path, ArrayDinamis<String> pesanError)
             throws IOException {
 
         ArrayDinamis<Putusan> daftarPutusan = new ArrayDinamis<>();
@@ -61,7 +61,7 @@ public class CsvImporter {
                     daftarPutusan.add(putusan);
 
                 } catch (RuntimeException e) {
-                    throw new IOException("Gagal membaca baris " + nomorBaris + ": " + e.getMessage(), e);
+                    pesanError.add("Baris " + nomorBaris + ": " + e.getMessage());
                 }
             }
         }
